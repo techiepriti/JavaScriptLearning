@@ -1,0 +1,17 @@
+function getFrequency(string){
+let myArr= string.split(" ");
+let result={};
+
+for(let i=0; i<myArr.length; i++){
+  let sum=0;
+  for(let j in myArr){
+    if(myArr[i] === myArr[j]){
+      sum++;
+    }
+  }
+  result[myArr[i]]= sum;
+}
+return result;
+}
+
+console.log(getFrequency("kitty kitty get her get too touch her get my"));
