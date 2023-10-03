@@ -1,0 +1,39 @@
+function createShoppingCart(){
+  let myarr= {};
+  
+  function addItem(item, price){
+  myarr[item]= price;
+}
+  function removeItem(item){
+    delete myarr[item];
+  }
+  function getTotal(){
+    let item=Object.keys(myarr);
+    let total= 0;
+    if(item.length === 0){
+      return 0.0;
+    }else{
+    for(let i in item){
+     total+= myarr[item[i]];
+    }
+    }
+    return total;
+  }
+  return{
+    addItem : addItem,
+    removeItem : removeItem,
+    getTotal : getTotal
+  };
+
+}
+
+const cart1 = createShoppingCart();
+console.log(cart1)
+ 
+cart1.addItem("tamoto", 40);
+cart1.addItem("Potato", 20);
+cart1.addItem("LadyFinger", 30);
+
+cart1.removeItem("LadyFinger");
+const res= cart1.getTotal();
+console.log(res);
