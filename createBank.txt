@@ -1,0 +1,29 @@
+function createBank(){
+//let fname= name;
+let balance =0;
+  function createAccount(name){
+   name= name;
+  }
+  function deposit(n){
+  balance+=n;
+  }
+  function withdraw(w){
+  return balance-= w;
+  }
+  function getBalance(){
+    return balance;
+  }
+  return{
+    createAccount : createAccount,
+    deposit : deposit,
+    withdraw : withdraw,
+    getBalance : getBalance
+  };
+}
+
+const bank= createBank();
+bank.createAccount("Preeti");
+bank.deposit(1000);
+bank.withdraw(500);
+
+console.log(bank.getBalance());
