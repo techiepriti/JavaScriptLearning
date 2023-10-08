@@ -1,0 +1,24 @@
+function palindrome(str) {
+  let newstr=[];
+  newstr = str.match(/[a-zA-Z0-9]+/ig);
+  //form a new string from array elements obtained after filter
+  let temp="";
+  let reverse="";
+  for(let i in newstr){
+   temp+=newstr[i];
+     }
+     temp= temp.toLowerCase();
+     //reverse the string obtained
+     for(let j=temp.length-1; j>=0; j--){
+       reverse+=temp[j];
+     }
+     //check for pallindrome
+     if(temp === reverse){
+  return true;
+     }
+     else{
+       return false;
+     }
+}
+
+console.log(palindrome("A man, a plan, a canal. Panama"));
