@@ -1,0 +1,23 @@
+function rot13(str) {
+  let arr = str.split("");
+  let myarr = [ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+let result=[];
+for(let i in arr){
+  if(myarr.includes(arr[i])){
+    let index= myarr.indexOf(arr[i]);
+    let newindex= index+13;
+    if(newindex > 25){
+      newindex = newindex-26;
+    }
+    result.push(myarr[newindex]);
+    }
+    else {
+      result.push(arr[i]);
+    }
+  
+}
+
+  return result.join("");
+}
+
+console.log(rot13("SERR CVMMN!"));
